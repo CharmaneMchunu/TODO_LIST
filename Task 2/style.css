@@ -1,0 +1,184 @@
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --text: #2f4a6e;
+  --bg: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+  --glass: rgba(255, 255, 255, 0.2);
+  --radius: 0.75rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text);
+  padding: 1rem;
+}
+
+.container {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  width: min(95%, 480px);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 41, 55, 0.1);
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.create-todo input,
+.create-todo textarea {
+  width: 100%;
+  padding: 0.875rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  transition: 0.2s ease;
+}
+
+.create-todo input:focus,
+.create-todo textarea:focus {
+  outline: 2px solid var(--primary);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.new-task {
+  background: var(--primary);
+  color: white;
+  width: 100%;
+}
+
+.new-task:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.todo-list ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.todo-list li {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text);
+}
+
+.task-details {
+  flex-grow: 1; /* Allows the task details to take up remaining space */
+}
+
+.task-actions {
+  display: flex;
+  gap: 5px;
+}
+
+
+.task-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.task-checkbox:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.edit,
+.delete {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.edit {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.delete {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.completed {
+  opacity: 0.6;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.completed .task-details {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.editing {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* When input is focused */
+.editing:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Add slight transparency when inactive */
+.editing::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  li {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  button {
+    padding: 0.5rem;
+  }
+}
