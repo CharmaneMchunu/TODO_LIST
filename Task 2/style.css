@@ -98,7 +98,7 @@ button {
 }
 
 .task-details {
-  flex-grow: 1; /* Allows the task details to take up remaining space */
+  flex-grow: 1; 
 }
 
 .task-actions {
@@ -150,19 +150,17 @@ button {
   width: 100%;
   padding: 8px 12px;
   font-size: 16px;
-  border: 2px solid #007bff; /* Blue border */
+  border: 2px solid #007bff; 
   border-radius: 6px;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
 
-/* When input is focused */
 .editing:focus {
   border-color: #0056b3;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Add slight transparency when inactive */
 .editing::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
